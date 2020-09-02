@@ -1,0 +1,90 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body{
+     height: 100%;
+     background-color: DarkSlateGrey;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 50;
+    margin: 1rem 0 3rem;
+    text-align: center;
+    color: SpringGreen;
+    font-family: 'Hind', sans-serif;
+}
+li{
+  cursor: pointer;
+}
+
+.todoList{
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.input_div{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+}
+
+#input{
+      padding: 1rem 1rem;
+      height: 10px;
+      outline: none;
+      background-color: Snow;
+      width: 250px;
+      font-size: 1rem;
+      margin:0.20rem;
+      border-radius: 25px;
+}
+#todos{
+  padding: 1rem;
+  color: Gainsboro;
+}
+.addButton{
+      padding: 2.5px;
+      border-radius: 60px;
+      outline: none;
+      border: none;
+      color: black;
+      margin: 0.50px;
+      background-color:DarkSlateGrey;
+      cursor: pointer;
+}
+.addButton:hover{
+      opacity: 10;
+      background-color: ;
+}
+
+.delButton{
+  padding: 2.5px;
+  border-radius: 60px;
+  outline: none;
+  border: none;
+  color: black;
+  margin: 0.30px;
+  background-color:DarkSlateGrey;
+  cursor: pointer;
+}
+.delButton:hover{
+      opacity: 10;
+      background-color: none;
+}
+
+.content{
+      display: flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items: center;
+      text-align: center;
+      margin-top: 2rem;
+}

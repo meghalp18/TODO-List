@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="file:///C:/Users/pc/Downloads/fontawesome-free-5.14.0-web/css/all.min.css">
+    <!--  <script src=""> </script>-->
+    <title>TODO List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
+</head>
+  <body >
+      <div class="todoList" >
+        <h2>TODO List</h2>
+        <div class="content">
+          <div id="myDiv" class="input_div">
+            <form name="add">
+
+              <input  id="input" type="text" name="name" value="" placeholder="What to do ...">
+              <button onclick="addLi(); return false;"type="button" class="addButton"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+              <button onclick="delLi(); " type="button" class="delButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        <ul id="todos">
+          <li>learn jquery  </li>
+          <li>learn JSON</li>
+          <li>watch series</li>
+          <li>listen music</li>
+        </ul>
+        </div>
+      </div>
+
+     <script type="text/javascript" src="main.js">
+     </script>
+
+
+  </body>
+</html>
