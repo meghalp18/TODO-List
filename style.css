@@ -51,6 +51,7 @@ li{
   color: Gainsboro;
 }
 .addButton{
+      font-family: 'Font Awesome 5 Free';
       padding: 2.5px;
       border-radius: 60px;
       outline: none;
