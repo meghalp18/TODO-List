@@ -4,7 +4,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
    <link rel="stylesheet" href="css\all.css">
-     
+
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <title>TODO List</title>
@@ -12,23 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
 </head>
   <body >
-      <div class="todoList" >
+      <div id="myDiv" class="todoList" >
         <h2>TODO List</h2>
         <div class="content">
-          <div id="myDiv" class="input_div">
+          <div  class="input_div">
             <form name="add">
 
               <input  id="input" type="text" name="name" value="" placeholder="What to do ...">
-              <button onclick="addLi(); return false;"type="button" class="addButton"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
-              <button onclick="delLi(); " type="button" class="delButton"><i class="fa fa-trash" aria-hidden="true"></i>
+              <button type="button" id="add" class="addButton"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+
 </button>
             </form>
           </div>
         <ul id="todos">
-          <li>learn jquery  </li>
-          <li>learn JSON</li>
-          <li>watch series</li>
-          <li>listen music</li>
+          <li class="mycheck"><input type="checkbox" id='check'><label >Learn jquery </label> </li>
+          <li><input type="checkbox" id='check'><label >learn JSON </label> </li>
+          <li><input type="checkbox" id='check'><label >watch series </label> </li>
+
         </ul>
         </div>
       </div>

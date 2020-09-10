@@ -1,84 +1,78 @@
-var insertText = document.getElementById('input'),
-     items = document.querySelectorAll('#todos li'),
-          tab =  [], index;
+var ul = document.getElementById('todos')
+var li;
+var addButton = document.getElementById('add')
+addButton.addEventListener("click",addItem)
 
-      //populate array with li values
-      for(var i=0; i < items.length; i++){
-        tab.push(items[i].innerHTML);
-      }
-      //get li index onclick
-      for (var i = 0; i < items.length; i++) {
-        items[i].onclick = function(){
-           index = tab.indexOf(this.innerHTML);
-           console.log(this.innerHTML + 'INDEX=' +index);
-            //set the selected li value into insert text
-            insertText.value = this.innerHTML;
-        };
-      }
-      //on enter event
-       document.getElementById('input').onkeydown = function(e){
-          if(e.keyCode == 13){
+// add items
+function addItem(){
+    var input = document.getElementById('input')
+    var item = input.value;
+    var textNode = document.createTextNode(item)
+    if (item == '')
+     {
+        (alert('Pl write your task!'))
+        return false;
 
-            var listNode =document.getElementById('todos'),
-             textNode = document.createTextNode(insertText.value),
-            liNode = document.createElement('Li');
+     } else {
+        li = document.createElement('li')
+         let checkbox = document.createElement('input')
+         checkbox.type = 'checkbox'
+         checkbox.setAttribute('id','check')
 
-            liNode.appendChild(textNode);
-            listNode.appendChild(liNode);
-            refreshArray();
+         let label = document.createElement('label')
 
-            //clear the input
-           var clearInput =document.getElementById('input').value = '';
+         ul.appendChild(label)
+         li.appendChild(checkbox)
+         label.appendChild(textNode)
+         li.appendChild(label)
+        ul.insertBefore(li, ul.childNodes[0])
+            setTimeout(()=>{
+             li.className = 'visual'
+         },5)
+         input.value = ""
+     }
+     //delete button
+     var span = document.createElement("SPAN");
+     var txt = document.createTextNode("\u00D7");
+     span.className = "close";
+     span.appendChild(txt);
+     li.appendChild(span);
 
-            //add event to new li
-            liNode.onclick = function(){
-               index = tab.indexOf(liNode.innerHTML);
-               console.log(liNode.innerHTML + 'INDEX=' +index);
+//for delete
+   for (var i = 0; i < close.length; i++) {
+     close[i].onclick=function() {
+       if(confirm("are you sure?")){
+         var div = this.parentElement;
+        div.style.display = "none";
+       }else {
+               return false;
+       }
 
-            //set the selected li value into insert text
-              insertText.value = liNode.innerHTML;
-            };
+       }}
+}
+
+// Create a "close" button and append it to each list item
+
+var myNodelist = document.getElementsByTagName("LI");
+for (var i = 0; i < myNodelist.length; i++) {
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+
+// Click on a close button to hide the current list items
+var close = document.getElementsByClassName("close");
+for (var i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    if(confirm("are you sure?")){
+      var div = this.parentElement;
+     div.style.display = "none";
+    }else {
             return false;
-
-              }
-             };
-
-    function refreshArray() {
-          //clear arrary
-          tab.length = 0;
-           items = document.querySelectorAll('#todos li');
-          //fill arrary
-          for (var i = 0; i < items.length; i++) {
-            tab.push(items[i].innerHTML);
-          }
-        }
-
-    function addLi() {
-            var listNode =document.getElementById('todos'),
-             textNode = document.createTextNode(insertText.value),
-             liNode = document.createElement('Li');
-
-             liNode.appendChild(textNode);
-             listNode.appendChild(liNode);
-             refreshArray();
-             //clear the input
-            var clearInput =document.getElementById('input').value = '';
-
-             //add event to new li
-             liNode.onclick = function(){
-                index = tab.indexOf(liNode.innerHTML);
-                console.log(liNode.innerHTML + 'INDEX=' +index);
-
-                //set the selected li value into insert text
-                insertText.value = liNode.innerHTML;
-                };
-                  return false;
-              };
-
-    function delLi() {
-          if (items.length >= 0) {
-           items[index].parentNode.removeChild(items[index]),
-           insertText.value = '';
-         }
-         refreshArray();
-        }
+    }
+    };
+  }

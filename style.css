@@ -5,8 +5,9 @@
 }
 
 body{
+      margin: 0;
      height: 100%;
-     background-color: DarkSlateGrey;
+     background-color: black;
 }
 
 h2{
@@ -19,6 +20,51 @@ h2{
 }
 li{
   cursor: pointer;
+
+}
+ul {
+  margin: 0;
+  padding:0;
+
+}
+
+ul li {
+
+  position: relative;
+  padding: 10px 15px 10px 15px;
+  list-style-type: none;
+  background: none;
+  font-size: 18px;
+  transition: 0.2s;
+  opacity: 0.5;
+
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+/* Add a "checked" mark when clicked on */
+ul li.myCheck::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+#myDiv ul li input[type='checkbox']:checked+label{
+  text-decoration: line-through;
 }
 
 .todoList{
@@ -41,51 +87,51 @@ li{
       height: 10px;
       outline: none;
       background-color: Snow;
+      box-sizing: border-box;
       width: 250px;
+      float: left;
       font-size: 1rem;
       margin:0.20rem;
       border-radius: 25px;
 }
 #todos{
-  padding: 1rem;
-  color: Gainsboro;
+  padding: 1.5rem;
+  color: Snow ;
+  text-align: justify;
+  box-sizing: border-box;
 }
+
 .addButton{
       font-family: 'Font Awesome 5 Free';
-      padding: 2.5px;
-      border-radius: 60px;
+      font-size: 1.5rem;
+      padding: 10px;
+      border-radius: 50px;
       outline: none;
       border: none;
-      color: black;
-      margin: 0.50px;
-      background-color:DarkSlateGrey;
+      color: white;
+      margin: 0.05rem;
+      background-color:black;
       cursor: pointer;
 }
-.addButton:hover{
-      opacity: 10;
-      background-color: ;
+
+
+
+
+.close {
+  font-weight: bold;
+  color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding:12px 12px 12px 25px;
 }
 
-.delButton{
-  padding: 2.5px;
-  border-radius: 60px;
-  outline: none;
-  border: none;
-  color: black;
-  margin: 0.30px;
-  background-color:DarkSlateGrey;
-  cursor: pointer;
-}
-.delButton:hover{
-      opacity: 10;
-      background-color: none;
-}
 
 .content{
-      display: flex;
+      display: grid;
       flex-direction:column;
       justify-content:center;
       align-items: center;
-      text-align: center;
+      text-align: justify;
       margin-top: 2rem;
 }
