@@ -29,6 +29,7 @@ function addItem(){
             setTimeout(()=>{
              li.className = 'visual'
          },5)
+
          input.value = ""
      }
      //delete button
@@ -76,3 +77,57 @@ for (var i = 0; i < close.length; i++) {
     }
     };
   }
+
+        //for enter
+    var input = document.getElementById('input')
+    input.addEventListener('keypress', function(event){
+        if (event.keyCode === 13) {
+
+          event.preventDefault();
+          var input = document.getElementById('input')
+          var item = input.value;
+          var textNode = document.createTextNode(item)
+          if (item == '')
+           {
+              (alert('Pl write your task!'))
+              return false;
+
+           } else {
+              li = document.createElement('li')
+               let checkbox = document.createElement('input')
+               checkbox.type = 'checkbox'
+               checkbox.setAttribute('id','check')
+
+               let label = document.createElement('label')
+
+               ul.appendChild(label)
+               li.appendChild(checkbox)
+               label.appendChild(textNode)
+               li.appendChild(label)
+              ul.insertBefore(li, ul.childNodes[0])
+                  setTimeout(()=>{
+                   li.className = 'visual'
+               },5)
+
+               input.value = ""
+           }
+           //delete button
+           var span = document.createElement("SPAN");
+           var txt = document.createTextNode("\u00D7");
+           span.className = "close";
+           span.appendChild(txt);
+           li.appendChild(span);
+
+           //for delete
+           for (var i = 0; i < close.length; i++) {
+             close[i].onclick=function() {
+               if(confirm("Are you sure?")){
+                 var div = this.parentElement;
+                 div.style.display = "none";
+               }else {
+                     return false;
+                   }
+
+             }}
+        }
+      },false);
